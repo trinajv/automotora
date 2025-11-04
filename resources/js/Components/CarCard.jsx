@@ -1,5 +1,6 @@
 import { Card, Button, Badge } from "react-bootstrap";
 import { formatNumber } from "../utils/formatNumber";
+import { Link } from "@inertiajs/react";
 
 export default function CarCard({ car }) {
   return (
@@ -55,9 +56,13 @@ export default function CarCard({ car }) {
           <small className="d-block text-muted mt-1">{car.seller}</small>
         </Card.Text>
 
-        <Button variant="primary" className="w-100">
+        <Link
+          href={`/auto/${car.brand?.toLowerCase()}/${car.title?.split(" ")[0]?.toLowerCase()}/${car.id}`}
+          className="btn btn-primary w-100"
+        >
           Ver detalle
-        </Button>
+        </Link>
+
       </Card.Body>
     </Card>
   );
