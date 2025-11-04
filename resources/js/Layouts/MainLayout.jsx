@@ -1,5 +1,8 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "@inertiajs/react";
+import { route } from 'ziggy-js';
+
+
 
 export default function MainLayout({ children }) {
   return (
@@ -14,14 +17,12 @@ export default function MainLayout({ children }) {
           <Navbar.Collapse id="main-navbar">
             <Nav className="ms-auto">
               <Nav.Link as={Link} href="/" className="mx-2">
-                Inicio
-              </Nav.Link>
-              <Nav.Link as={Link} href="/autos" className="mx-2">
                 Autos
               </Nav.Link>
-              <Nav.Link as={Link} href="/contacto" className="mx-2">
+              <Nav.Link as={Link} href={route('contact.index')} className="mx-2">
                 Contacto
               </Nav.Link>
+
             </Nav>
           </Navbar.Collapse>
         </Container>
